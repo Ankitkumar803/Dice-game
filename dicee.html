@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="">
+      </div>
+
+      <p class="result">Player 2</p>
+    </div>
+    
+    <script>
+      var x = Math.ceil(Math.random()*6)
+      var y = Math.ceil(Math.random()*6)
+
+      document.querySelectorAll(".img1")[0].src = "images/dice"+ x +".png"
+      document.querySelectorAll(".img2")[0].src = "images/dice"+ y +".png"
+
+      if (x > y) {
+        document.querySelector(".result").textContent = "Player 1 Wins";
+      } else if (x < y) {
+        document.querySelector(".result").textContent = "Player 2 Wins";
+      } else {
+        document.querySelector(".result").textContent = "Draw";
+      }
+
+    </script>
+
+  </body>
+
+  <footer>
+    🎲 🎲 🎲
+  </footer>
+</html>
